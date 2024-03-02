@@ -1,4 +1,3 @@
-console.log(display);
 var valor1 = 0;
 var valor2 = 0;
 var isValor2 = false;
