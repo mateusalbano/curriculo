@@ -1,4 +1,3 @@
-var display = null;
 console.log(display);
 var valor1 = 0;
 var valor2 = 0;
@@ -52,10 +51,12 @@ function tecla(tecla) {
     display = document.getElementById("display");
     switch (tecla) {
 
-        case 'módulo':
+        case 'modulo':
             isValor2 = true;
-            operacao = 'módulo'
             decimal = false;
+            display.innerHTML = 0;
+            valor2 = 0;
+            operacao = 'modulo';
             break;
         case 'raiz':
             isValor2 = false;
@@ -114,7 +115,7 @@ function tecla(tecla) {
             break;
         case 'igual':
             switch (operacao) {
-                case 'módulo':
+                case 'modulo':
                     modulo();
                     break;
                 case 'div':
@@ -132,7 +133,13 @@ function tecla(tecla) {
             }
             break;
         default:
-            if (display.innerHTML.length >= 15) {
+            let length = display.innerHTML.length;
+            if (decimal) length--;
+            if (length >= 15) {
+                break;
+            }
+            if (tecla == 0 && decimal) {
+                display.innerHTML = display.innerHTML + 0;
                 break;
             }
             if (!isValor2) {
@@ -142,7 +149,6 @@ function tecla(tecla) {
                 valor2 = Number(display.innerHTML + tecla);
                 display.innerHTML = valor2;
             }
-            
             break;
     }
 }
