@@ -1,1 +1,1 @@
-Meu currículo: https://mateusalbano.github.io/curriculo/ 
+Meu currículo: https://mateusalbano.github.io/html/curriculo 
