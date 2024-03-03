@@ -1,3 +1,4 @@
+var display;
 var valor1 = 0;
 var valor2 = 0;
 var isValor2 = false;
@@ -46,59 +47,69 @@ function raiz() {
     decimal = false;
 }
 
-function tecla(tecla) {
-    display = document.getElementById("display");
-    switch (tecla) {
-
+function igual(operacao) {
+    switch (operacao) {
         case 'modulo':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'modulo';
+            modulo();
+            break;
+        case 'div':
+            divisao();
+            break;
+        case 'mul':
+            multiplicacao();
+            break;
+        case 'soma':
+            soma();
+            break;
+        case 'sub':
+            subtracao();
+            break;
+    }
+    isValor2 = false;
+}
+
+function setOperacao(novaOperacao) {
+    if (!isValor2) {
+        isValor2 = true
+        decimal = false;
+        display.innerHTML = 0;
+        valor2 = 0;
+        this.operacao = novaOperacao;
+    }
+}
+
+function tecla(tecla) {
+    this.display = document.getElementById("display");
+    switch (tecla) {
+        case 'modulo':
+            setOperacao(tecla);
             break;
         case 'raiz':
-            isValor2 = false;
+            if (isValor2) break;
             raiz();
             break;
         case 'C':
             valor1 = 0;
             valor2 = 0;
-            isValor2 = false;
+            isValor2 = false
             decimal = false;
             valor2 = 0;
             display.innerHTML = valor1;
             break;
         case 'div':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'div';
+            setOperacao(tecla);
             break;
         case 'mul':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'mul';
+            setOperacao(tecla);
             break;
         case 'soma':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'soma';
+            setOperacao(tecla);
             break;
         case 'sub':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'sub';
+            setOperacao(tecla);
             break;
         case 'inverte':
-            if (isValor2) {
+            if (estagio == 1) {
                 valor2 = - valor2;
                 display.innerHTML = valor2;
             } else {
@@ -113,23 +124,7 @@ function tecla(tecla) {
             }
             break;
         case 'igual':
-            switch (operacao) {
-                case 'modulo':
-                    modulo();
-                    break;
-                case 'div':
-                    divisao();
-                    break;
-                case 'mul':
-                    multiplicacao();
-                    break;
-                case 'soma':
-                    soma();
-                    break;
-                case 'sub':
-                    subtracao();
-                    break;
-            }
+            igual(operacao);
             break;
         default:
             let length = display.innerHTML.length;
