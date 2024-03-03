@@ -9,42 +9,42 @@ function soma() {
     valor1 = valor1 + valor2
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function subtracao() {
     valor1 = valor1 - valor2;
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function divisao() {
     valor1 = valor1 / valor2;
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function multiplicacao() {
     valor1 = valor1 * valor2;
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function modulo() {
     valor1 = valor1 % valor2;
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function raiz() {
     valor1 = Math.sqrt(valor1);
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
 }
 
 function igual(operacao) {
@@ -95,6 +95,7 @@ function tecla(tecla) {
             decimal = false;
             valor2 = 0;
             display.innerHTML = valor1;
+            operacao = "";
             break;
         case 'div':
             setOperacao(tecla);
