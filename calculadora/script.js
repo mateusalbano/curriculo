@@ -109,7 +109,7 @@ function tecla(tecla) {
             setOperacao(tecla);
             break;
         case 'inverte':
-            if (estagio == 1) {
+            if (isValor2) {
                 valor2 = - valor2;
                 display.innerHTML = valor2;
             } else {
