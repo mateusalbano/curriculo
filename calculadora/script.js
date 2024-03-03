@@ -5,46 +5,40 @@ var isValor2 = false;
 var decimal = false;
 var operacao = '';
 
-function soma() {
-    valor1 = valor1 + valor2
+function displayIgual() {
     display.innerHTML = valor1;
     isValor2 = false;
     decimal = valor1 % 1 != 0;
+}
+
+function soma() {
+    valor1 = valor1 + valor2
+    displayIgual();
 }
 
 function subtracao() {
     valor1 = valor1 - valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = valor1 % 1 != 0;
+    displayIgual();
 }
 
 function divisao() {
     valor1 = valor1 / valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = valor1 % 1 != 0;
+    displayIgual();
 }
 
 function multiplicacao() {
     valor1 = valor1 * valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = valor1 % 1 != 0;
+    displayIgual();
 }
 
 function modulo() {
     valor1 = valor1 % valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = valor1 % 1 != 0;
+    displayIgual();
 }
 
 function raiz() {
     valor1 = Math.sqrt(valor1);
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = valor1 % 1 != 0;
+    displayIgual();
 }
 
 function igual(operacao) {
