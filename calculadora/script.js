@@ -1,101 +1,107 @@
-var display = null;
-console.log(display);
+var display;
 var valor1 = 0;
 var valor2 = 0;
 var isValor2 = false;
 var decimal = false;
 var operacao = '';
 
-function soma() {
-    valor1 = valor1 + valor2
+function displayIgual() {
     display.innerHTML = valor1;
     isValor2 = false;
-    decimal = false;
+    decimal = valor1 % 1 != 0;
+}
+
+function soma() {
+    valor1 = valor1 + valor2
+    displayIgual();
 }
 
 function subtracao() {
     valor1 = valor1 - valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = false;
+    displayIgual();
 }
 
 function divisao() {
     valor1 = valor1 / valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = false;
+    displayIgual();
 }
 
 function multiplicacao() {
     valor1 = valor1 * valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = false;
+    displayIgual();
 }
 
 function modulo() {
     valor1 = valor1 % valor2;
-    display.innerHTML = valor1;
-    isValor2 = false;
-    decimal = false;
+    displayIgual();
 }
 
 function raiz() {
     valor1 = Math.sqrt(valor1);
-    display.innerHTML = valor1;
+    displayIgual();
+}
+
+function igual(operacao) {
+    switch (operacao) {
+        case 'modulo':
+            modulo();
+            break;
+        case 'div':
+            divisao();
+            break;
+        case 'mul':
+            multiplicacao();
+            break;
+        case 'soma':
+            soma();
+            break;
+        case 'sub':
+            subtracao();
+            break;
+    }
     isValor2 = false;
-    decimal = false;
+}
+
+function setOperacao(novaOperacao) {
+    if (!isValor2) {
+        isValor2 = true
+        decimal = false;
+        display.innerHTML = 0;
+        valor2 = 0;
+        this.operacao = novaOperacao;
+    }
 }
 
 function tecla(tecla) {
-    display = document.getElementById("display");
+    this.display = document.getElementById("display");
     switch (tecla) {
-
-        case 'módulo':
-            isValor2 = true;
-            operacao = 'módulo'
-            decimal = false;
+        case 'modulo':
+            setOperacao(tecla);
             break;
         case 'raiz':
-            isValor2 = false;
+            if (isValor2) break;
             raiz();
             break;
         case 'C':
             valor1 = 0;
             valor2 = 0;
-            isValor2 = false;
+            isValor2 = false
             decimal = false;
             valor2 = 0;
             display.innerHTML = valor1;
+            operacao = "";
             break;
         case 'div':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'div';
+            setOperacao(tecla);
             break;
         case 'mul':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'mul';
+            setOperacao(tecla);
             break;
         case 'soma':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'soma';
+            setOperacao(tecla);
             break;
         case 'sub':
-            isValor2 = true;
-            decimal = false;
-            display.innerHTML = 0;
-            valor2 = 0;
-            operacao = 'sub';
+            setOperacao(tecla);
             break;
         case 'inverte':
             if (isValor2) {
@@ -113,26 +119,16 @@ function tecla(tecla) {
             }
             break;
         case 'igual':
-            switch (operacao) {
-                case 'módulo':
-                    modulo();
-                    break;
-                case 'div':
-                    divisao();
-                    break;
-                case 'mul':
-                    multiplicacao();
-                    break;
-                case 'soma':
-                    soma();
-                    break;
-                case 'sub':
-                    subtracao();
-                    break;
-            }
+            igual(operacao);
             break;
         default:
-            if (display.innerHTML.length >= 15) {
+            let length = display.innerHTML.length;
+            if (decimal) length--;
+            if (length >= 15) {
+                break;
+            }
+            if (tecla == 0 && decimal) {
+                display.innerHTML = display.innerHTML + 0;
                 break;
             }
             if (!isValor2) {
@@ -142,7 +138,6 @@ function tecla(tecla) {
                 valor2 = Number(display.innerHTML + tecla);
                 display.innerHTML = valor2;
             }
-            
             break;
     }
 }
