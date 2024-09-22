@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Currículo</title>
+
 </head>
 <body>
     <header>
@@ -28,7 +29,7 @@
     <div class="section" id="info">
         <h2>Informações básicas</h2>
             <strong>Nome</strong>: Mateus Albano Santos <br>
-            <strong>Data nasc</strong>: 11/05/2004 <br>
+            <strong>Data nasc</strong>: 11/05/2004 <span id="idade"></span> <br>
             <strong>Email</strong>: albanomateus7@gmail.com <br>
             <strong>Endereço</strong>: Ponta Aguda, Blumenau <br>
             <strong>Telefone</strong>: (47) 99751-3444
@@ -83,5 +84,16 @@
             </li>
         </ul>
     </div>
+    <script>
+        const now = new Date();
+        const day = now.getDate();
+        const month = now.getMonth();
+        const year = now.getFullYear();
+        let age = year - 2004;
+        if (month < 4 || (month == 4 && day < 11)) {
+            age--;
+        }
+        document.getElementById("idade").innerHTML = "(" + age + " anos)"
+    </script>
 </body>
 </html>

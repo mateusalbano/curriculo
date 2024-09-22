@@ -113,12 +113,8 @@ a:active {
 }
 ul {
     list-style-type: none;
-    padding-right: 40px;
 }
-li {
-    padding: 5px;
-    border-bottom: 2px dashed gray;
-}
+
 dd {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
