@@ -28,7 +28,7 @@ body {
 #fechar {
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/wordle/svg/close.svg");
+    background-image: url("svg/close.svg");
     height: 25px;
     width: 25px;
     position: absolute;
@@ -83,12 +83,12 @@ input {
 
 #reiniciar{
     right: 95px;
-    background-image: url("/wordle/svg/refresh.svg");
+    background-image: url("svg/refresh.svg");
 }
 
 #ajuda {
     right: 10px;
-    background-image: url("/wordle/svg/question_mark.svg");
+    background-image: url("svg/question_mark.svg");
 }
 
 @media (max-width: 850px) {
