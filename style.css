@@ -86,7 +86,7 @@ nav a {
 }
 nav a:hover {
     color: white;
-    background-color: gray;
+    background-color: royalblue;
 }
 
 nav, .section {
