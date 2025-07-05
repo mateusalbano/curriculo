@@ -131,8 +131,9 @@ dd {
         display: block;
     }
     nav a {
-        height: 60px;
-        line-height: 60px;
+        height: 45px;
+        line-height: 45px;
+        font-size: medium;
     }
     .section {
         padding: 25px;
