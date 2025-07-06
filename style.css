@@ -120,6 +120,15 @@ dd {
     font-size: large;
     color: dimgray;
 }
+@media (max-width: 1400px) {
+    nav, nav a {
+        display: block;
+    }
+    nav a {
+        height: 60px;
+        line-height: 60px;
+    }
+}
 @media (max-width: 500px) {
     .icon-link {
         top: 50px;
@@ -127,9 +136,6 @@ dd {
     
 }
 @media (max-width: 750px) {
-    nav, nav a {
-        display: block;
-    }
     nav a {
         height: 45px;
         line-height: 45px;
