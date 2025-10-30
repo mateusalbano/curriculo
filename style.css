@@ -20,6 +20,10 @@ header {
     gap: 25px;
 }
 
+#skills, #contact {
+    flex: 0%
+}
+
 .content section {
     flex-grow: 1;
     border-radius: 5px;
@@ -40,28 +44,33 @@ footer {
     margin-top: 50px;
 }
 
-@media (max-width: 750px) {
+
+
+@media (max-width: 1000px) {
     body {
         font-size: 100%;
     }
+    header {
+        padding: 75px;
+    }
+}
 
+@media (max-width: 750px) {
+    body {
+        font-size: 80%;
+    }
     .images img {
         width: 35px;
         height: 35px;
     }
+    header {
+        padding: 50px;
+    }
 }
 
-
-@media (max-width: 500px) {
-    body {
-        font-size: 75%;
-    }
-    header {
-        padding: 35px;
-    }
-
-    .images img {
-        width: 30px;
-        height: 30px;
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 }
