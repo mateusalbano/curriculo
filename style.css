@@ -9,6 +9,7 @@ body {
     box-sizing: border-box;
     background-color: #fafafa;
     color: #333;
+    font-size: 125%;
 }
 
 hr {
@@ -26,6 +27,7 @@ hr {
 }
 
 header {
+    align-items: center;
     position: relative;
     display: flex;
     background-color: gray;
@@ -59,8 +61,8 @@ header span {
 }
 
 .foto-perfil {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 10%;
     object-fit: cover;
     border: 2px solid lightgray;
@@ -85,13 +87,13 @@ header span {
     background-color: #00669C;
     color: #f0f0f0;
     border-radius: 5px;
-    padding: 20px;
+    padding: 25px;
     border-left: 8px solid #004F73;
 }
 
 .right {
     flex: 65%;
-    padding: 20px;
+    padding: 25px;
 }
 
 .right img {
@@ -113,7 +115,12 @@ header span {
 
 @media (max-width: 1024px) {
     body {
-        font-size: 75%;
+        font-size: 90%;
+    }
+
+    .foto-perfil {
+        width: 200px;
+        height: 200px;
     }
 
     .left, .right {
