@@ -3,64 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
+    </style>
     <link rel="stylesheet" href="style.css">
     <title>Mateus Albano Santos</title>
 </head>
 <body>
     <header>
-        <h1>Mateus Albano Santos</h1>
-        <p>Estudante</p>
+        <div class="filter" ></div>
+        <img class="foto-perfil" src="img/foto-perfil.jpg" alt="Foto de perfil de Mateus Albano Santos">
+        <span>
+            <h1>Mateus Albano Santos</h1>
+            <p>
+                Programador • Estudante <br><br>
+                <img class="icon" src="img/telephone_icon.svg" alt=""> Telefone: +55 47 99751-3444 <br>
+                <img class="icon" src="img/email_icon.svg" alt=""> Email: mateusalbano@furb.br <br>
+                <img class="icon" src="img/location_icon.svg" alt=""> Localização: Blumenau, SC
+            </p>
+        </span>
+        <span class="github-linkedin">
+            <a href="https://github.com/mateusalbano" target="_blank">
+                <img src="img/github-logo.png" alt="GitHub logo">
+            </a>
+            <a href="https://www.linkedin.com/in/mateus-albano-santos-983176294/" target="_blank">
+                <img src="img/linkedin-logo.png" alt="Linkedin logo">
+            </a>
+        </span>
     </header>
     <div class="content">
-        <section id="about-me-experience">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Meu nome é Mateus Albano Santos, tenho <span id="idade"></span> anos e sou estudante do 7º semestre de Ciências da Computação na Fundação Universidade Regional de Blumenau (FURB). Sou apaixonado por tecnologia e programação, e estou sempre buscando aprender coisas novas nessa área fascinante.</p>
-            <h2>Formação</h2>
-            <ul>
-                <li>
-                    <strong>Bacharelado em Ciências da Computação</strong> - FURB (cursando).
-
-                </li>
-                <li>
-                    <strong>Ensino médio</strong> - Colégio Sagrada Família (2019 - 2021).
-                </li>
-            </ul>
-            <h2>Experiência</h2>
-            <ul>
-                <li>
-                    <strong>Estagiário de Desenvolvimento de Software</strong> - Inteligence For Inovation (2024).
-                    <p>Atuei no desenvolvimento de aplicações Web com GeneXus, plataforma de desenvolvimento low-code.</p>
-                </li>
-                <li>
-                    <strong>Auxiliar de TI</strong> - Interblu Centro Clínico (2022).
-                    <p>Trabalhei com manutenção de computadores e periféricos utilizados por outros funcionários da empresa.</p>
-                </li>
-            </ul>
-        </section>
-        <section id="skills">
-            <h2>Tecnologias e ferramentas</h2>
-            <div class="images">
-                <img src="img/java-logo.svg" alt="java logo">
-                <img src="img/cpp-logo.svg" alt="cpp logo">
-                <img src="img/spring-logo.svg" alt="spring logo">
-                <img src="img/react-logo.svg" alt="react logo">
-                <img src="img/docker-logo.svg" alt="docker logo">
-                <img src="img/git-logo.svg" alt="git logo">
-                <img src="img/postgres-logo.svg" alt="postgres logo">
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contato</h2>
-            <p><strong>GitHub:</strong> <a href="https://github.com/mateusalbano" target="_blank">https://github.com/mateusalbano</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mateus-albano-santos-983176294/" target="_blank">https://www.linkedin.com/in/mateus-albano-santos</a></p>
-            <p><strong>Gmail:</strong> <a href="mailto:albanomateus7@gmail.com">albanomateus7@gmail.com</a></p>
-            <p><strong>Outlook:</strong> <a href="mailto:mateusalbano@furb.br">mateusalbano@furb.br</a></p>
-            <p><strong>Telefone:</strong> <a href="tel:+5547997513444">+55 47 99751-3444</a></p>
-        </section>
+        <div class="left">
+            <section class="formacao">
+                <h2>Formação</h2>
+                <ul>
+                    <li>
+                        <strong>Bacharelado em Ciências da Computação</strong> <span class="lightyellow"> - FURB (cursando).</span>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Ensino médio</strong> <span class="lightyellow"> - Colégio Sagrada Família (2019 - 2021).</span>
+                    </li>
+                </ul>
+            </section>
+            <section class="experiencia">
+                <h2>Experiência</h2>
+                <ul>
+                    <li>
+                        <strong>Estagiário de Desenvolvimento de Software</strong> <span class="lightyellow"> - Inteligence For Inovation (2024).</span>
+                        <p class="lightblue">Atuei no desenvolvimento de aplicações Web com GeneXus, plataforma de desenvolvimento low-code.</p>
+                    </li>
+                    <li>
+                        <strong>Auxiliar de TI</strong> <span class="lightyellow"> - Interblu Centro Clínico (2022).</span>
+                        <p class="lightblue">Trabalhei com manutenção de computadores e periféricos utilizados por outros funcionários da empresa.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="right">
+            <section class="sobre-mim">
+                <h2>Sobre Mim</h2>
+                <p>Olá! Meu nome é Mateus Albano Santos, tenho <span id="idade"></span> anos e sou estudante do 7º semestre de Ciências da Computação na Fundação Universidade Regional de Blumenau (FURB). Sou apaixonado por tecnologia e programação, e estou sempre buscando aprender coisas novas nessa área fascinante.</p>
+            </section>
+            <hr>
+            <section class="tecnologias-e-ferramentas">
+                <h2>Tecnologias e ferramentas</h2>
+                <div class="images">
+                    <img src="img/java-logo.svg" alt="java logo">
+                    <img src="img/cpp-logo.svg" alt="cpp logo">
+                    <img src="img/spring-logo.svg" alt="spring logo">
+                    <img src="img/react-logo.svg" alt="react logo">
+                    <img src="img/docker-logo.svg" alt="docker logo">
+                    <img src="img/git-logo.svg" alt="git logo">
+                    <img src="img/postgres-logo.svg" alt="postgres logo">
+                </div>
+            </section>
+        </div>
     </div>
-    <footer>
-        <p>2025 Mateus Albano Santos</p>
-    </footer>
     <script>
         const now = new Date();
         const day = now.getDate();
